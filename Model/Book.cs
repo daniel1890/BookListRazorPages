@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace BookListRazorPages.Model
         public string Name { get; set; }
 
         public string Author { get; set; }
+        public string ISBN { get; set; }
     }
 }

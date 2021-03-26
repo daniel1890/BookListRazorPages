@@ -14,35 +14,40 @@
         <form method="post">
             @if (Model.Books.Count() > 0)
             {
-            <table class="table table-striped border">
-                <tr class="table-secondary">
-                    <th>
-                        <label asp-for="Books.FirstOrDefault().Name"></label>
-                    </th>
-                    <th>
-                        <label asp-for="Books.FirstOrDefault().Author"></label>
-                    </th>
-                    <td>
-                    </td>
-                </tr>
-                @foreach (var book in Model.Books)
-                {
-            <tr>
-                <td>
-                    <!-- book.Name schrijf deze eigenschap liever met een HTML helper functie -->
-                    @Html.DisplayFor(m => book.Name)
-                </td>
-                <td>
-                    <!-- book.Name schrijf deze eigenschap liever met een HTML helper functie -->
-                    @Html.DisplayFor(m => book.Author)
-                </td>
-                <td>
-                    <button class="btn btn-danger btn-sm">Delete</button>
-                    <a class="btn btn-success btn-sm text-white">Edit</a>
-                </td>
-            </tr>
-                }
-            </table>
+                <table class="table table-striped border">
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().Name"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().Author"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().ISBN"></label>
+                        </th>
+                        <td>
+                        </td>
+                    </tr>
+                    @foreach (var book in Model.Books)
+                    {
+                        <tr>
+                            <td>
+                                <!-- book.Name schrijf deze eigenschap liever met een HTML helper functie -->
+                                @Html.DisplayFor(m => book.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => book.Author)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => book.ISBN)
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <a asp-page="Edit" asp-route-id="@book.Id" class="btn btn-success btn-sm text-white">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
             }
             else
             {
