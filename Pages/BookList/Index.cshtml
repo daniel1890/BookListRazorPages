@@ -42,7 +42,8 @@
                                 @Html.DisplayFor(m => book.ISBN)
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <!-- Door het Book.Id mee te geven in de route weet de volgende pagina welk Book object geladen moet worden.-->
+                                <a asp-page="Delete" asp-route-id="@book.Id" class="btn btn-danger btn-sm">Delete</a>
                                 <a asp-page="Edit" asp-route-id="@book.Id" class="btn btn-success btn-sm text-white">Edit</a>
                             </td>
                         </tr>

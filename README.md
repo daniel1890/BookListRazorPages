@@ -22,13 +22,21 @@ Task OnPost creeër je een nieuw Book. Met behulp van jquery validatie kan je ma
 ingevuld zijn door boven de elementen die gechecked moeten worden deze div te creeëren: 
 "div class="text-danger" asp-validation-summary="ModelOnly"", daarna onder elk element wat verified moet worden
 is deze span nodig : "span asp-validation-for="Book.Name" class="text-danger"></span"
-
 - Creeër een Edit pagina, dit lijkt heel erg op het maken van de Create pagina, de Edit pagina maakt ook gebruik van
 de async Post Task. het enige verschil is dat je mbv deze methode "_db.Attach(Book).State = EntityState.Modified;"
 de staat van het object uit de database met gelijke ID aan het object die op de pagina weergeven wordt gelijk maakt aan
-elkaar.
+elkaar. Zorg ook dat je bovenaan van de markup van de edit page deze hidden helper tag staat:         
+input type="hidden" asp-for="Book.Id" /. Dit is nodig zodat de Id van het Book model ook gepassed wordt, anders zou
+het Edit Book object niet gelijk zijn aan het Database Book object.
+- Creeër een Delete pagina, deze zit hetzelfde in elkaar als de Edit page. De Delete page hoeft niet per sé gemaakt te worden,
+het kan ook als alert weergeven worden en dan via asp-route-id kan je makkelijk de Book.Id meegeven en dan creëer je net als
+op de Delete pagina die gecreëerd is een OnPostDelete methode. Met deze methode zoek je naar het Book.Id en dan verwijder
+je het object uit de database en return je naar de Index.
+
 
 ## NuGet Packages
 - EntityFrameworkCore
 - EntityFrameworkCore.SqlServer
 - EntityFrameworkCore.Tools
+
+
