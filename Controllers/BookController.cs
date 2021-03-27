@@ -12,23 +12,25 @@ namespace BookListRazorPages.Controllers
     [ApiController]
     public class BookController : Controller
     {
-        private ApplicationDbContext _db;
+        private readonly ApplicationDbContext _db;
 
         public BookController(ApplicationDbContext db)
         {
             _db = db;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public IActionResult GetAll()
         {
             return Json(new { data = _db.Book.ToList() });
         }
 
+        /*
         [HttpGet("{id}")]
-        public Book Get(int id)
+        public Book GetSingle(int id)
         {
             return _db.Book.FirstOrDefault(x => x.Id == id);
         }
+        */
     }
 }
