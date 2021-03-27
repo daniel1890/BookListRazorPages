@@ -6,6 +6,12 @@
     <title>@ViewData["Title"] - BookListRazorPages</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Dit is een cdn link naar de css link voor toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <!-- Dit is een cdn link naar de css styling voor Data Tables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+    <!-- Dit is een cdn link naar de css styling voor Jquery UI -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 </head>
 <body>
     <header>
@@ -41,7 +47,15 @@
         </div>
     </footer>
 
+    <!-- JS script CDN voor Sweet Alert om alert messages mooiere styling te geven -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Toastr is een JS library om mooie notificaties te weergeven -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Jquery UI script, heeft verschillende UI widgets om makkelijk te implementeren in de pagina's -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Data Tables script, dit is een JS library om makkelijk mooie tabellen te plaatsen -->
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 

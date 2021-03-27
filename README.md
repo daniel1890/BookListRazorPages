@@ -4,6 +4,7 @@ Dit is een project wat gemaakt is met ASP.NET core, het is een website waar de g
 deze lijst kunnen uiteindelijk volle CRUD operaties worden gedaan.
 
 ## Stappenplan
+#### Standaard CRUD Operaties
 - Creeër een model Book, voeg AddDbContext service toe aan services, run "add-migration" en "update-database" commands
 in NuGet console om een Book table te creëeren in de database mbv EF.
 
@@ -32,11 +33,25 @@ het Edit Book object niet gelijk zijn aan het Database Book object.
 het kan ook als alert weergeven worden en dan via asp-route-id kan je makkelijk de Book.Id meegeven en dan creëer je net als
 op de Delete pagina die gecreëerd is een OnPostDelete methode. Met deze methode zoek je naar het Book.Id en dan verwijder
 je het object uit de database en return je naar de Index.
+#### Voeg Api Controller Toe
+- In de Startup.cs file moeten voor de API Controller de endpoints toegevoegd worden, ook moet de controller aan de 
+services toegevoegd worden.
+- Maak een folder Controllers aan en maak hierin een lege API Controller, net zoals in de Pagina's
+voor het Book model moet de ApplicationDbContext injected worden om gebruikt te worden. met behulp van Http Calls kan je makkelijk
+nieuwe calls toevoegen voor Get, Put, Post, Delete en nog meer calls.
+- Wat ook een goede optie is, is om een Services folder te creeëren met daarin een IBookService, in deze Interface
+kunnen alle API calls gestopt worden, dan kan deze Interface net zoals ApplicationDbContext met Dependency Injection
+in de constructor gestopt worden, daarna is deze Interface over de hele klasse bruikbaar.
 
+#### Voeg Datatables toe
 
 ## NuGet Packages
 - EntityFrameworkCore
 - EntityFrameworkCore.SqlServer
 - EntityFrameworkCore.Tools
 
-
+## JavaScript Libraries
+- Sweet Alert
+- Toastr
+- Data Tables
+- Jquery UI
