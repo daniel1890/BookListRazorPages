@@ -48,15 +48,16 @@
         </div>
     </footer>
 
-    <!-- JS script CDN voor Sweet Alert om alert messages mooiere styling te geven -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- Toastr is een JS library om mooie notificaties te weergeven -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- Een CDN link naar JQuery, deze moet als eerst ingeladen worden want de andere plugins (toastr, data tables, sweet alert) hebben dependencies op jquery -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Toastr is een JS library om mooie notificaties te weergeven -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <!-- Jquery UI script, heeft verschillende UI widgets om makkelijk te implementeren in de pagina's -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Data Tables script, dit is een JS library om makkelijk mooie tabellen te plaatsen -->
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <!-- JS script CDN voor Sweet Alert om alert messages mooiere styling te geven -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 

@@ -44,6 +44,10 @@ kunnen alle API calls gestopt worden, dan kan deze Interface net zoals Applicati
 in de constructor gestopt worden, daarna is deze Interface over de hele klasse bruikbaar.
 
 #### Voeg Datatables toe
+- Data Tables is een JQuery library, het is niet moeilijk te importeren alleen is de implementatie nogal vervelend,
+doordat je een volledige string tussen ` ` tekens moet stoppen, hierdoor verlies je intellisense en kan je makkelijk
+spelfouten maken, ik weet niet of ik deze library in de toekomst zal gebruiken.
+
 
 ## NuGet Packages
 - EntityFrameworkCore
